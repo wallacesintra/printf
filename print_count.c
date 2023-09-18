@@ -6,20 +6,19 @@
  */
 int _printf(const char *format, ...)
 {
-	int char_count = 0;
+	int char_count = 0, length_string = 0;
 	va_list string_list;
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(string_list, format);
 	while (*format)
 	{
 		if (*format != '%')
-        {
-            write(1, &format, 1);
+		{
+			write(1, &format, 1);
 			char_count = char_count + 1;
-        }
+		}
 		else
 		{
 			format++;
@@ -40,15 +39,13 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				char *str = va_arg(string_list, char*);
-				int length_string = 0;
 			while (str[length_string])
-                length_string = length_string + 1;
-            write(1, &str, length_string);
-	        char_count = char_count + length_string;
-			}	
+				length_string = length_string + 1;
+				write(1, &str, length_string);
+			char_count = char_count + length_string;
+			}
 		}
 	}
-	format++;
-	va_end(string_list);
+	format++, va_end(string_list);
 	return (char_count);
 }
