@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format != '%')
-			write(1, format, 1);
+			write(1, &format, 1);
 			char_count = char_count + 1;
 		else
 		{
