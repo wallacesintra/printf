@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 's')
 			{
-				char *str = va_arg(string_list, *char);
+				char *str = va_arg(string_list, char*);
 				int length_string = 0;
 			while (str[length_string])
                 length_string = length_string + 1;
