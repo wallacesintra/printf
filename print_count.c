@@ -16,8 +16,10 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format != '%')
-			write(1, &format, 1);
+        {
+            write(1, &format, 1);
 			char_count = char_count + 1;
+        }
 		else
 		{
 			format++;
@@ -37,7 +39,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 's')
 			{
-				char str[] = va_arg(string_list, *char);
+				char *str = va_arg(string_list, *char);
 				int length_string = 0;
 			while (str[length_string])
                 length_string = length_string + 1;
