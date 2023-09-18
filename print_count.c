@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 		if (*format != '%')
 			write(1, &format, 1);
 			char_count = char_count + 1;
-		else if
+		else
 		{
 			format++;
 			if (*format == '\0')
@@ -41,9 +41,9 @@ int _printf(const char *format, ...)
 				int length_string = 0;
 			while (str[length_string])
                 length_string = length_string + 1;
-			}
             write(1, &str, length_string);
-	        char_count = char_count + length_string;	
+	        char_count = char_count + length_string;
+			}	
 		}
 	}
 	format++;
