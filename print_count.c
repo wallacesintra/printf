@@ -36,15 +36,28 @@ int _printf(const char *format, ...)
 				write(1, &c, 1);
 				char_count = char_count + 1;
 			}
+			else if (*format == 'd')
+			{
+				double d = va_arg(string_list, double);
+
+				write(1, &d, 8);
+				char_count = char_count + 1;
+			}
+			else if (*format == 'i')
+			{
+				int i = va_arg(string_list, int);
+
+				write(1, &i, 4);
+				char_count = char_count + 1;
+			}
 			else if (*format == 's')
 			{
 				char *str = va_arg(string_list, char*);
-			while (str[length_string])
-			{
-				length_string = length_string + 1;
-			}
-			write(1, &str, length_string);
-			char_count = char_count + length_string;
+				while (str[length_string])
+					length_string = length_string + 1;
+
+				write(1, str, length_string);
+				char_count = char_count + length_string;
 			}
 			else
 			{
