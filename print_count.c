@@ -39,9 +39,10 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				char *str = va_arg(string_list, char*);
-			while (str[length_string])
+			while (str[length_string]){
 				length_string = length_string + 1;
 				write(1, &str, length_string);
+				}
 			char_count = char_count + length_string;
 			}
 		}
