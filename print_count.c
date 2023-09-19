@@ -46,6 +46,11 @@ int _printf(const char *format, ...)
 				}
 			char_count = char_count + length_string;
 			}
+			else 
+			{
+				va_end(string_list);
+				return (-1);
+			}
 		}
 		format++;
 	}
