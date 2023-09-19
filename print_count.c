@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 			{
 				length_string = length_string + 1;
 			}
-			write(1, &str, length_string)
+			write(1, &str, length_string);
 			char_count = char_count + length_string;
 			}
 			else
