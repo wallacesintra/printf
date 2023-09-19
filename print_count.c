@@ -47,7 +47,8 @@ int _printf(const char *format, ...)
 			char_count = char_count + length_string;
 			}
 		}
+		format++;
 	}
-	format++, va_end(string_list);
+	va_end(string_list);
 	return (char_count);
 }
