@@ -6,7 +6,7 @@
  *Return:  number of characters printed
  */
 
-int printf_count1(const char *format, ...) 
+int printf_count1(const char *format, ...)
 {
 	int char_count = 0;
 	va_list string_list;
